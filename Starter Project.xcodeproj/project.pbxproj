@@ -15,6 +15,9 @@
 		E30408A429D517C90026FFC8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30408A329D517C90026FFC8 /* PhotosViewController.swift */; };
 		E30408AA29D519FA0026FFC8 /* PhotoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30408A829D519FA0026FFC8 /* PhotoCVC.swift */; };
 		E30408AB29D519FA0026FFC8 /* PhotoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E30408A929D519FA0026FFC8 /* PhotoCVC.xib */; };
+		E31C15B329D7A528001F67B4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C15B229D7A528001F67B4 /* NetworkManager.swift */; };
+		E31C15B629D7A7BE001F67B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C15B529D7A7BE001F67B4 /* Constants.swift */; };
+		E31C15B929D7A935001F67B4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C15B829D7A935001F67B4 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		E30408A329D517C90026FFC8 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		E30408A829D519FA0026FFC8 /* PhotoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCVC.swift; sourceTree = "<group>"; };
 		E30408A929D519FA0026FFC8 /* PhotoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCVC.xib; sourceTree = "<group>"; };
+		E31C15B229D7A528001F67B4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E31C15B529D7A7BE001F67B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E31C15B829D7A935001F67B4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				02948DF829CFC76E00F82F28 /* LaunchScreen.storyboard */,
 				02948DFB29CFC76E00F82F28 /* Info.plist */,
 				E30408A329D517C90026FFC8 /* PhotosViewController.swift */,
+				E31C15B229D7A528001F67B4 /* NetworkManager.swift */,
+				E31C15B529D7A7BE001F67B4 /* Constants.swift */,
+				E31C15B829D7A935001F67B4 /* Photo.swift */,
 			);
 			path = "Starter Project";
 			sourceTree = "<group>";
@@ -169,10 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31C15B929D7A935001F67B4 /* Photo.swift in Sources */,
 				E30408A429D517C90026FFC8 /* PhotosViewController.swift in Sources */,
 				02948DEE29CFC76D00F82F28 /* AppDelegate.swift in Sources */,
+				E31C15B329D7A528001F67B4 /* NetworkManager.swift in Sources */,
 				02948DF029CFC76D00F82F28 /* SceneDelegate.swift in Sources */,
 				E30408AA29D519FA0026FFC8 /* PhotoCVC.swift in Sources */,
+				E31C15B629D7A7BE001F67B4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
