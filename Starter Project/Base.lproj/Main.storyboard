@@ -43,10 +43,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1Y-C0-Aqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="106"/>
+            <point key="canvasLocation" x="1545" y="51"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="dcU-1e-NBE">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailsViewController" id="B6E-cV-Myd" customClass="PhotoDetailsViewController" customModule="Starter_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ra9-MJ-xiM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMW-iC-ZMZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQT-Mu-qzd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KQT-Mu-qzd" firstAttribute="top" secondItem="PMW-iC-ZMZ" secondAttribute="top" id="9nb-KK-Yfn"/>
+                                    <constraint firstAttribute="trailing" secondItem="KQT-Mu-qzd" secondAttribute="trailing" id="A6X-rE-dle"/>
+                                    <constraint firstItem="KQT-Mu-qzd" firstAttribute="centerX" secondItem="PMW-iC-ZMZ" secondAttribute="centerX" id="P5k-I8-Qn3"/>
+                                    <constraint firstAttribute="bottom" secondItem="KQT-Mu-qzd" secondAttribute="bottom" id="TPW-dV-Vot"/>
+                                    <constraint firstItem="KQT-Mu-qzd" firstAttribute="leading" secondItem="PMW-iC-ZMZ" secondAttribute="leading" id="Vni-FH-Dvs"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="o7B-z4-flI"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GcC-pd-FS6"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWN-t5-VVv">
+                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Jp-Bh-IL0"/>
+                                    <constraint firstAttribute="width" constant="40" id="BTb-P8-2SM"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="B6E-cV-Myd" eventType="touchUpInside" id="9mE-nk-fC2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v7d-Mc-TGW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PMW-iC-ZMZ" firstAttribute="leading" secondItem="v7d-Mc-TGW" secondAttribute="leading" id="3sV-XN-lvS"/>
+                            <constraint firstItem="PMW-iC-ZMZ" firstAttribute="top" secondItem="v7d-Mc-TGW" secondAttribute="top" id="6cw-ER-l0U"/>
+                            <constraint firstItem="PMW-iC-ZMZ" firstAttribute="height" secondItem="v7d-Mc-TGW" secondAttribute="height" id="6sD-pZ-P4F"/>
+                            <constraint firstItem="PWN-t5-VVv" firstAttribute="leading" secondItem="v7d-Mc-TGW" secondAttribute="leading" constant="20" id="AGH-ZS-flL"/>
+                            <constraint firstItem="v7d-Mc-TGW" firstAttribute="bottom" secondItem="PMW-iC-ZMZ" secondAttribute="bottom" id="HZz-ew-3oz"/>
+                            <constraint firstItem="v7d-Mc-TGW" firstAttribute="trailing" secondItem="PMW-iC-ZMZ" secondAttribute="trailing" id="i6V-9y-fWk"/>
+                            <constraint firstItem="KQT-Mu-qzd" firstAttribute="height" secondItem="v7d-Mc-TGW" secondAttribute="height" id="q79-lD-KV4"/>
+                            <constraint firstItem="PWN-t5-VVv" firstAttribute="top" secondItem="v7d-Mc-TGW" secondAttribute="top" constant="20" id="t0n-Sk-j97"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="displayedImage" destination="KQT-Mu-qzd" id="33G-u0-gxE"/>
+                        <outlet property="scrollView" destination="PMW-iC-ZMZ" id="ZrV-2z-Eea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wx4-UO-WtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301" y="8"/>
         </scene>
     </scenes>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

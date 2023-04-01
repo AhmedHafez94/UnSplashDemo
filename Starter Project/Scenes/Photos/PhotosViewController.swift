@@ -19,18 +19,26 @@ class PhotosViewController: UIViewController {
         fetchPhotos(firstPage: true)
     }
     
-    func setupCollectionView() {
+   private func setupCollectionView() {
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
         photosCollectionView.register(UINib(nibName: "PhotoCVC", bundle: nil), forCellWithReuseIdentifier: "PhotoCVC")
     }
     
-    func fetchPhotos(firstPage: Bool) {
+    private func fetchPhotos(firstPage: Bool) {
         viewModel.fetchPhotos(firstPage: firstPage) { (photos) in
             DispatchQueue.main.async {
                 self.photosCollectionView.reloadData()
             }
         }
+    }
+    
+    private func goToViewPhotoDetails(photo: Photo) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let destVC = sb.instantiateViewController(identifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
+        destVC.photo = photo
+        destVC.modalPresentationStyle = .fullScreen
+        present(destVC, animated: true)
     }
 
 }
@@ -51,6 +59,11 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width) / 2, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = viewModel.allPhotos[indexPath.row]
+        goToViewPhotoDetails(photo: photo)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
