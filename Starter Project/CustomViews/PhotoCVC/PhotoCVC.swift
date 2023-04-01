@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoCVC: UICollectionViewCell {
 
     @IBOutlet weak var likesLabelCount: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    func configure(photo: Photo) {
+        photoImageView.sd_setImage(with: URL(string: photo.urls?.regular ?? ""))
+        likesLabelCount.text = "\(photo.likes ?? 0)"
     }
 
 }

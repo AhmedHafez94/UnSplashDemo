@@ -11,16 +11,26 @@ class PhotosViewController: UIViewController {
 
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
+    let viewModel = PhotosViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        NetworkManager.fetchPhotos(for: 1)
+        fetchPhotos(firstPage: true)
     }
     
     func setupCollectionView() {
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
         photosCollectionView.register(UINib(nibName: "PhotoCVC", bundle: nil), forCellWithReuseIdentifier: "PhotoCVC")
+    }
+    
+    func fetchPhotos(firstPage: Bool) {
+        viewModel.fetchPhotos(firstPage: firstPage) { (photos) in
+            DispatchQueue.main.async {
+                self.photosCollectionView.reloadData()
+            }
+        }
     }
 
 }
@@ -30,12 +40,12 @@ class PhotosViewController: UIViewController {
 
 extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        viewModel.allPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCVC", for: indexPath) as! PhotoCVC
-        
+        cell.configure(photo: viewModel.allPhotos[indexPath.row])
         return cell
     }
     
