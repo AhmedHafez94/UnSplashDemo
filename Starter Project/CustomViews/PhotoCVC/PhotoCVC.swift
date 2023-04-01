@@ -20,7 +20,7 @@ class PhotoCVC: UICollectionViewCell {
     }
     
     func configure(photo: Photo) {
-        photoImageView.sd_setImage(with: URL(string: photo.urls?.regular ?? ""))
+        photoImageView.sd_setImage(with: URL(string: photo.urls?.thumb ?? ""))
         likesLabelCount.text = "\(photo.likes ?? 0)"
     }
 

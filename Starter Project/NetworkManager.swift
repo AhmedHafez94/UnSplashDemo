@@ -11,7 +11,7 @@ struct NetworkManager {
     
     static func fetchPhotos(for page: Int, completion: @escaping (_ photos: [Photo]) -> Void) {
         
-        let endPoint = Constants.photosUrl
+        let endPoint = "\(Constants.photosUrl)&page=\(page)"
         
         guard let url = URL(string: endPoint) else {
             return

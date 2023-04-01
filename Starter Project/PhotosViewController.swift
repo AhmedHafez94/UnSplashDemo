@@ -53,5 +53,19 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: (collectionView.frame.width) / 2, height: 250)
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+        
+        if offsetY > contentHeight - height {
+            
+            if viewModel.isFetchingPhotos == false {
+                fetchPhotos(firstPage: false)
+            }
+           
+        }
+    }
+    
     
 }
